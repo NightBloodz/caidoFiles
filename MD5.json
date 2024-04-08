@@ -1,0 +1,92 @@
+{
+  "description": "",
+  "edition": 2,
+  "graph": {
+    "edges": [
+      {
+        "source": {
+          "exec_alias": "exec",
+          "node_id": 0
+        },
+        "target": {
+          "exec_alias": "exec",
+          "node_id": 2
+        }
+      },
+      {
+        "source": {
+          "exec_alias": "exec",
+          "node_id": 2
+        },
+        "target": {
+          "exec_alias": "exec",
+          "node_id": 1
+        }
+      }
+    ],
+    "nodes": [
+      {
+        "alias": "convert_start",
+        "definition_id": "caido/convert-start",
+        "display": {
+          "x": -150,
+          "y": -70
+        },
+        "id": 0,
+        "inputs": [],
+        "name": "Convert Start",
+        "version": "0.1.0"
+      },
+      {
+        "alias": "convert_end",
+        "definition_id": "caido/convert-end",
+        "display": {
+          "x": -150,
+          "y": 190
+        },
+        "id": 1,
+        "inputs": [
+          {
+            "alias": "data",
+            "value": {
+              "data": "$md5_hash.data",
+              "kind": "ref"
+            }
+          }
+        ],
+        "name": "Convert End",
+        "version": "0.1.0"
+      },
+      {
+        "alias": "md5_hash",
+        "definition_id": "caido/md5-hash",
+        "display": {
+          "x": -160,
+          "y": 60
+        },
+        "id": 2,
+        "inputs": [
+          {
+            "alias": "encoding",
+            "value": {
+              "data": "HEX",
+              "kind": "string"
+            }
+          },
+          {
+            "alias": "data",
+            "value": {
+              "data": "$convert_start.data",
+              "kind": "ref"
+            }
+          }
+        ],
+        "name": "MD5 Hash",
+        "version": "0.1.0"
+      }
+    ]
+  },
+  "id": "7fa920b5-fe40-48fc-8d40-119dd109fe78",
+  "kind": "convert",
+  "name": "MD5"
+}
